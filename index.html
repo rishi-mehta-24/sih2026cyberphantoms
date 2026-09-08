@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BIS AI Assistant</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f8fc;
+      color: #1b2b4b;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      height: 70px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 7%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #0b4ea2;
+    }
+
+    .logo-icon {
+      font-size: 30px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    nav ul li:hover {
+      color: #0b63ce;
+    }
+
+    .login-btn {
+      background: #0b63ce;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 60px 8%;
+      background:
+        linear-gradient(135deg,#f7fbff,#dcecff);
+    }
+
+    .hero-text {
+      max-width: 550px;
+    }
+
+    .hero-text h1 {
+      font-size: 52px;
+      margin-bottom: 20px;
+      color: #123a70;
+    }
+
+    .hero-text h1 span {
+      color: #0b63ce;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #52647c;
+      margin-bottom: 30px;
+    }
+
+    .search-box {
+      background: white;
+      display: flex;
+      padding: 8px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+      max-width: 520px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      flex: 1;
+      padding: 15px;
+      font-size: 15px;
+    }
+
+    .search-box button {
+      background: #0b63ce;
+      color: white;
+      border: none;
+      width: 55px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .robot {
+      font-size: 180px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    /* FEATURES */
+
+    .features {
+      padding: 70px 8%;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 35px;
+      margin-bottom: 50px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 15px;
+      text-align: left;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card-icon {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #667085;
+      line-height: 1.5;
+    }
+
+    /* CHATBOT */
+
+    .chat-section {
+      background: #eaf3ff;
+      padding: 80px 8%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .chat-container {
+      background: white;
+      width: 800px;
+      max-width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      overflow: hidden;
+    }
+
+    .chat-header {
+      background: #0b4ea2;
+      color: white;
+      padding: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .messages {
+      height: 350px;
+      padding: 25px;
+      overflow-y: auto;
+    }
+
+    .bot-message,
+    .user-message {
+      padding: 14px 18px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      max-width: 75%;
+      line-height: 1.5;
+    }
+
+    .bot-message {
+      background: #edf4ff;
+    }
+
+    .user-message {
+      background: #0b63ce;
+      color: white;
+      margin-left: auto;
+    }
+
+    .chat-input {
+      display: flex;
+      padding: 15px;
+      border-top: 1px solid #ddd;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .chat-input button {
+      margin-left: 10px;
+      padding: 0 25px;
+      border: none;
+      background: #0b63ce;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* STANDARDS */
+
+    .standards {
+      padding: 80px 8%;
+    }
+
+    .standards h2 {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 40px;
+    }
+
+    .standard-search {
+      display: flex;
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 40px;
+    }
+
+    .standard-search input {
+      flex: 1;
+      padding: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px 0 0 8px;
+      outline: none;
+    }
+
+    .standard-search button {
+      padding: 15px 25px;
+      background: #0b63ce;
+      color: white;
+      border: none;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+    }
+
+    .standard-list {
+      display: grid;
+      gap: 15px;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .standard-item {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .standard-item button {
+      background: #e7f0ff;
+      color: #0b63ce;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* BIS SERVICES */
+
+    .services {
+      background: #f0f6ff;
+      padding: 80px 8%;
+    }
+
+    .services h2 {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 45px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #102b50;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 768px) {
+
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 38px;
+      }
+
+      .robot {
+        font-size: 120px;
+        margin-top: 40px;
+      }
+
+      .standard-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+  <div class="logo">
+    <span class="logo-icon">🔺</span>
+    BIS AI Assistant
+  </div>
+
+  <ul>
+    <li>Home</li>
+    <li>Standards</li>
+    <li>Services</li>
+    <li>Chatbot</li>
+    <li>About</li>
+  </ul>
+
+  <button class="login-btn">Login / Sign Up</button>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-text">
+
+    <h1>
+      Your Smart Guide to <span>Indian Standards</span> & BIS Services
+    </h1>
+
+    <p>
+      Get instant answers about Indian Standards, BIS certification,
+      product compliance, hallmarking and BIS services using our
+      AI-powered intelligent assistant.
+    </p>
+
+    <div class="search-box">
+
+      <input
+        type="text"
+        placeholder="Ask anything about Indian Standards or BIS services..."
+      >
+
+      <button onclick="scrollToChat()">➜</button>
+
+    </div>
+
+  </div>
+
+
+  <div class="robot">
+    🤖
+  </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="features">
+
+  <h2>Explore BIS AI Assistant</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-icon">🔍</div>
+      <h3>Search Standards</h3>
+      <p>
+        Search Indian Standards quickly using standard number,
+        product name or keywords.
+      </p>
+    </div>
+
+
+    <div class="card">
+      <div class="card-icon">🛡️</div>
+      <h3>BIS Services</h3>
+      <p>
+        Learn about certification, hallmarking,
+        registration and consumer services.
+      </p>
+    </div>
+
+
+    <div class="card">
+      <div class="card-icon">🤖</div>
+      <h3>AI Chatbot</h3>
+      <p>
+        Ask questions and receive intelligent,
+        easy-to-understand answers.
+      </p>
+    </div>
+
+
+    <div class="card">
+      <div class="card-icon">🏭</div>
+      <h3>For Industries</h3>
+      <p>
+        Get compliance guidance and BIS information
+        for industries and manufacturers.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CHATBOT -->
+
+<section class="chat-section" id="chat">
+
+  <div class="chat-container">
+
+    <div class="chat-header">
+      🤖 BIS AI Assistant
+    </div>
+
+
+    <div class="messages" id="messages">
+
+      <div class="bot-message">
+        👋 Hello! I am your BIS AI Assistant.<br><br>
+
+        Ask me anything about:
+        <br>• Indian Standards
+        <br>• BIS Certification
+        <br>• Hallmarking
+        <br>• Product Compliance
+      </div>
+
+    </div>
+
+
+    <div class="chat-input">
+
+      <input
+        type="text"
+        id="userInput"
+        placeholder="Type your question here..."
+      >
+
+      <button onclick="sendMessage()">Send</button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SEARCH STANDARDS -->
+
+<section class="standards">
+
+  <h2>🔍 Search Indian Standards</h2>
+
+  <div class="standard-search">
+
+    <input
+      type="text"
+      placeholder="Search by Standard Number, Title or Keyword..."
+    >
+
+    <button>Search</button>
+
+  </div>
+
+
+  <div class="standard-list">
+
+    <div class="standard-item">
+
+      <div>
+        <h3>IS 302 (Part 1): 2008</h3>
+        <p>
+          Safety of household and similar electrical appliances
+        </p>
+      </div>
+
+      <button>View Details →</button>
+
+    </div>
+
+
+    <div class="standard-item">
+
+      <div>
+        <h3>IS 1786: 2008</h3>
+        <p>
+          Steel reinforcement bars and wires
+        </p>
+      </div>
+
+      <button>View Details →</button>
+
+    </div>
+
+
+    <div class="standard-item">
+
+      <div>
+        <h3>IS 732: 2019</h3>
+        <p>
+          Electrical wiring installations
+        </p>
+      </div>
+
+      <button>View Details →</button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- BIS SERVICES -->
+
+<section class="services">
+
+  <h2>BIS Services</h2>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <div class="card-icon">📋</div>
+
+      <h3>Product Certification</h3>
+
+      <p>
+        Learn about BIS product certification
+        and ISI marking.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">💎</div>
+
+      <h3>Hallmarking</h3>
+
+      <p>
+        Information about jewellery hallmarking
+        and certification.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">📝</div>
+
+      <h3>Registration</h3>
+
+      <p>
+        Explore BIS registration and
+        compliance requirements.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">🧑‍💼</div>
+
+      <h3>Consumer Grievance</h3>
+
+      <p>
+        Get information about consumer
+        complaints and support.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <h3>BIS AI Assistant 🤖</h3>
+
+  <br>
+
+  <p>
+    AI-Powered Intelligent Assistant for Indian Standards
+    and BIS Services
+  </p>
+
+  <br>
+
+  <p>
+    Built for Industries & Consumers | Hackathon Project 🚀
+  </p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function scrollToChat() {
+
+  document.getElementById("chat").scrollIntoView({
+    behavior: "smooth"
+  });
+
+}
+
+
+function sendMessage() {
+
+  let input = document.getElementById("userInput");
+
+  let message = input.value.trim();
+
+  if(message === "") return;
+
+
+  let messages = document.getElementById("messages");
+
+
+  messages.innerHTML +=
+  `<div class="user-message">${message}</div>`;
+
+
+  input.value = "";
+
+
+  setTimeout(() => {
+
+    let reply = getBotReply(message);
+
+    messages.innerHTML +=
+    `<div class="bot-message">${reply}</div>`;
+
+    messages.scrollTop = messages.scrollHeight;
+
+  }, 700);
+
+}
+
+
+function getBotReply(message) {
+
+  message = message.toLowerCase();
+
+
+  if(message.includes("certification")) {
+
+    return `
+    BIS Product Certification helps ensure that products
+    comply with relevant Indian Standards and quality requirements.
+    `;
+
+  }
+
+
+  if(message.includes("hallmark")) {
+
+    return `
+    BIS Hallmarking is used to certify the purity and quality
+    of precious metal jewellery.
+    `;
+
+  }
+
+
+  if(message.includes("standard")) {
+
+    return `
+    You can search Indian Standards using the Standard Number,
+    product name or relevant keywords.
+    `;
+
+  }
+
+
+  return `
+  Thank you for your question! 🤖<br><br>
+
+  In the complete project, this response will come from the
+  AI/RAG knowledge base containing BIS and Indian Standards data.
+  `;
+
+}
+
+
+document
+.getElementById("userInput")
+.addEventListener("keypress", function(event) {
+
+  if(event.key === "Enter") {
+    sendMessage();
+  }
+
+});
+
+</script>
+
+</body>
+</html>
