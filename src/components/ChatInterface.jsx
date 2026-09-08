@@ -5,7 +5,7 @@ import ResultCard from "./ResultCard";
 import LoadingSkeleton from "./LoadingSkeleton";
 
 async function fetchAssistantReply(question) {
-  const response = await fetch("https://thirty-teeth-do.loca.lt", {
+  const response = await fetch("https://flat-carrots-hear.loca.lt", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ question }),
