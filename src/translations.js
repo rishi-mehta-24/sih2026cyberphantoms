@@ -1,0 +1,48 @@
+// Central place for every piece of UI text in both languages.
+// Add new keys here whenever you add new visible text anywhere in the app.
+export const translations = {
+  en: {
+    brand: "Standards Assistant",
+    brandSub: "Bureau of Indian Standards",
+    navCertification: "Certification",
+    navClubs: "Standards Clubs",
+    navHallmarking: "Hallmarking",
+    navHelp: "Help",
+    eyebrow: "For industries & consumers",
+    heading: "BIS sahayak",
+    subheading:
+      "Describe your product or question in plain language. The assistant finds applicable standards, certification steps, and licensing requirements — so you don't have to dig through documents.",
+    tryAsking: "Try asking something like:",
+    starter1: "I manufacture ceramic tiles — what standard applies?",
+    starter2: "How do I get BIS certification for packaged drinking water?",
+    starter3: "What is the hallmarking process for gold jewellery?",
+    placeholder: "Describe your product or question…",
+    send: "Send",
+    loading: "Looking up applicable standards…",
+    errorMsg: "Couldn't reach the assistant. Check your connection and try again.",
+    retry: "Retry",
+    footer: "Prototype built for Smart India Hackathon 2026 · Problem Statement 26107",
+  },
+  hi: {
+    brand: "स्टैंडर्ड्स असिस्टेंट",
+    brandSub: "भारतीय मानक ब्यूरो",
+    navCertification: "प्रमाणन",
+    navClubs: "स्टैंडर्ड्स क्लब",
+    navHallmarking: "हॉलमार्किंग",
+    navHelp: "सहायता",
+    eyebrow: "उद्योगों और उपभोक्ताओं के लिए",
+    heading: "बीआईएस सहायक",
+    subheading:
+      "अपने उत्पाद या प्रश्न को सरल भाषा में बताएं। सहायक लागू मानक, प्रमाणन चरण और लाइसेंसिंग आवश्यकताएं खोजता है — ताकि आपको दस्तावेज़ों में खोजना न पड़े।",
+    tryAsking: "ऐसा कुछ पूछ कर देखें:",
+    starter1: "मैं सिरेमिक टाइल बनाता हूं — कौन सा मानक लागू होता है?",
+    starter2: "पैकेज्ड पीने के पानी के लिए बीआईएस प्रमाणन कैसे प्राप्त करें?",
+    starter3: "सोने के आभूषणों के लिए हॉलमार्किंग प्रक्रिया क्या है?",
+    placeholder: "अपना उत्पाद या प्रश्न बताएं…",
+    send: "भेजें",
+    loading: "लागू मानक खोजे जा रहे हैं…",
+    errorMsg: "सहायक तक नहीं पहुंच सका। अपना कनेक्शन जांचें और फिर से प्रयास करें।",
+    retry: "पुनः प्रयास करें",
+    footer: "स्मार्ट इंडिया हैकाथॉन 2026 के लिए बनाया गया प्रोटोटाइप · समस्या विवरण 26107",
+  },
+};
