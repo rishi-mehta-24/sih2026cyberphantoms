@@ -1,0 +1,392 @@
+{
+  "indian_standards": [
+    {
+      "is_number": "IS 1199:2018",
+      "title": "Specification for Cement (40°C Compressive Strength Class)",
+      "category": "Cement",
+      "description": "Defines cement specifications including composition, fineness, strength requirements, and testing procedures",
+      "scope": "Applies to cement manufactured in India for construction purposes",
+      "effective_date": "2018-06-01",
+      "status": "ACTIVE",
+      "document_url": "https://www.bis.gov.in/standards/is-1199-2018"
+    },
+    {
+      "is_number": "IS 226:2012",
+      "title": "Structural Steel (Plain) - Specification",
+      "category": "Steel",
+      "description": "Specification for structural steel bars and sections for construction",
+      "scope": "Mild steel structures in buildings and civil works",
+      "effective_date": "2012-04-15",
+      "status": "ACTIVE",
+      "document_url": "https://www.bis.gov.in/standards/is-226-2012"
+    },
+    {
+      "is_number": "IS 383:2016",
+      "title": "Coarse and Fine Aggregate for Concrete - Specification",
+      "category": "Construction Materials",
+      "description": "Specifies requirements for coarse and fine aggregates used in concrete",
+      "scope": "Aggregates for Portland cement concrete",
+      "effective_date": "2016-02-20",
+      "status": "ACTIVE",
+      "document_url": "https://www.bis.gov.in/standards/is-383-2016"
+    },
+    {
+      "is_number": "IS 732:2010",
+      "title": "Electrical Earthing - Code of Practice",
+      "category": "Electrical",
+      "description": "Covers design, installation and maintenance of electrical earthing systems",
+      "scope": "All electrical systems in buildings and installations",
+      "effective_date": "2010-08-01",
+      "status": "ACTIVE",
+      "document_url": "https://www.bis.gov.in/standards/is-732-2010"
+    },
+    {
+      "is_number": "IS 15959:2011",
+      "title": "LPG Cylinders - Steel - Seamless - Specification",
+      "category": "Gas Cylinders",
+      "description": "Specification for steel seamless LPG cylinders used for domestic and commercial purposes",
+      "scope": "LPG storage and transportation cylinders",
+      "effective_date": "2011-03-10",
+      "status": "ACTIVE",
+      "document_url": "https://www.bis.gov.in/standards/is-15959-2011"
+    },
+    {
+      "is_number": "IS 1571:2013",
+      "title": "Thermometers (Clinical) - Glass in Glass - Specification",
+      "category": "Medical Equipment",
+      "description": "Defines specifications for clinical thermometers including accuracy and safety",
+      "scope": "Glass clinical thermometers for human body temperature measurement",
+      "effective_date": "2013-05-22",
+      "status": "ACTIVE",
+      "document_url": "https://www.bis.gov.in/standards/is-1571-2013"
+    }
+  ],
+  "standard_clauses": [
+    {
+      "is_number": "IS 1199:2018",
+      "clause_number": "4.1",
+      "clause_title": "Chemical Composition",
+      "clause_text": "Cement shall contain the following percentages by mass: Silicon dioxide (SiO₂) min 17%, Aluminum oxide (Al₂O₃) max 8%, Iron oxide (Fe₂O₃) 3-8%, Calcium oxide (CaO) 60-67%, Magnesium oxide (MgO) max 5%",
+      "importance_level": "CRITICAL",
+      "testing_requirement": true
+    },
+    {
+      "is_number": "IS 1199:2018",
+      "clause_number": "5.2",
+      "clause_title": "Fineness Test",
+      "clause_text": "The residue on 90 micron sieve shall not exceed 10%. Residue on 45 micron sieve shall not exceed 0.5%",
+      "importance_level": "CRITICAL",
+      "testing_requirement": true
+    },
+    {
+      "is_number": "IS 1199:2018",
+      "clause_number": "6.1",
+      "clause_title": "Compressive Strength - 3 days",
+      "clause_text": "Minimum compressive strength at 3 days shall be 16 MPa for 40°C class cement",
+      "importance_level": "CRITICAL",
+      "testing_requirement": true
+    },
+    {
+      "is_number": "IS 226:2012",
+      "clause_number": "3.1",
+      "clause_title": "Yield Strength",
+      "clause_text": "Yield strength shall be minimum 250 MPa for structural steel bars",
+      "importance_level": "CRITICAL",
+      "testing_requirement": true
+    },
+    {
+      "is_number": "IS 732:2010",
+      "clause_number": "4.2",
+      "clause_title": "Earthing Electrode Resistance",
+      "clause_text": "Earth resistance shall not exceed 5 ohms for buildings. For equipment earthing, shall not exceed 1 ohm",
+      "importance_level": "HIGH",
+      "testing_requirement": true
+    }
+  ],
+  "products": [
+    {
+      "product_name": "Portland Cement",
+      "product_code": "CEMENT-001",
+      "category": "Cement",
+      "description": "Portland cement for general construction purposes",
+      "use_case": "Building construction, concrete production"
+    },
+    {
+      "product_name": "Structural Steel Bars",
+      "product_code": "STEEL-001",
+      "category": "Steel",
+      "description": "Mild steel reinforcement bars for concrete",
+      "use_case": "RCC structures, building reinforcement"
+    },
+    {
+      "product_name": "LPG Cylinder",
+      "product_code": "GAS-001",
+      "category": "Gas Cylinders",
+      "description": "Steel seamless LPG storage cylinder",
+      "use_case": "Domestic and commercial gas storage"
+    },
+    {
+      "product_name": "Clinical Thermometer",
+      "product_code": "MED-001",
+      "category": "Medical Equipment",
+      "description": "Glass clinical thermometer",
+      "use_case": "Body temperature measurement"
+    },
+    {
+      "product_name": "Copper Cable",
+      "product_code": "ELEC-001",
+      "category": "Electrical",
+      "description": "Copper electrical cable for building wiring",
+      "use_case": "Electrical installations in buildings"
+    }
+  ],
+  "product_standard_mapping": [
+    {
+      "product_code": "CEMENT-001",
+      "is_number": "IS 1199:2018",
+      "mandatory": true
+    },
+    {
+      "product_code": "STEEL-001",
+      "is_number": "IS 226:2012",
+      "mandatory": true
+    },
+    {
+      "product_code": "STEEL-001",
+      "is_number": "IS 383:2016",
+      "mandatory": false
+    },
+    {
+      "product_code": "GAS-001",
+      "is_number": "IS 15959:2011",
+      "mandatory": true
+    },
+    {
+      "product_code": "MED-001",
+      "is_number": "IS 1571:2013",
+      "mandatory": true
+    },
+    {
+      "product_code": "ELEC-001",
+      "is_number": "IS 732:2010",
+      "mandatory": true
+    }
+  ],
+  "bis_schemes": [
+    {
+      "scheme_name": "ISI Mark Scheme",
+      "scheme_code": "ISI-MARK",
+      "description": "ISI Mark certifies that products conform to Indian Standards and meet quality requirements",
+      "eligibility_criteria": "Manufacturers must have proper manufacturing facility, quality control systems, and testing capabilities",
+      "application_fee": 5000.00,
+      "processing_time_days": 45,
+      "validity_period_years": 3
+    },
+    {
+      "scheme_name": "Hallmarking Scheme",
+      "scheme_code": "HALLMARK",
+      "description": "Hallmark certifies purity of precious metals - gold, silver, and platinum",
+      "eligibility_criteria": "Jewelers and manufacturers registered with BIS Hallmarking Scheme",
+      "application_fee": 2500.00,
+      "processing_time_days": 30,
+      "validity_period_years": 5
+    },
+    {
+      "scheme_name": "Product Certification Scheme",
+      "scheme_code": "PRODUCT-CERT",
+      "description": "Third-party certification for conformity assessment of products against Indian Standards",
+      "eligibility_criteria": "Accredited testing labs and manufacturers with quality systems",
+      "application_fee": 7500.00,
+      "processing_time_days": 60,
+      "validity_period_years": 3
+    }
+  ],
+  "scheme_process_steps": [
+    {
+      "scheme_code": "ISI-MARK",
+      "step_number": 1,
+      "step_title": "Application Submission",
+      "step_description": "Submit application with details of manufacturing unit, product specifications, and quality control procedures",
+      "duration_days": 5,
+      "required_documents": [
+        "Factory Details Form",
+        "Product Specifications",
+        "Quality Control Plan",
+        "Technical Drawings"
+      ]
+    },
+    {
+      "scheme_code": "ISI-MARK",
+      "step_number": 2,
+      "step_title": "Pre-Audit Assessment",
+      "step_description": "BIS team audits manufacturing facility and quality control systems",
+      "duration_days": 10,
+      "required_documents": [
+        "Test Reports",
+        "Quality Control Records"
+      ]
+    },
+    {
+      "scheme_code": "ISI-MARK",
+      "step_number": 3,
+      "step_title": "Product Testing",
+      "step_description": "Representative samples tested in accredited laboratory",
+      "duration_days": 15,
+      "required_documents": [
+        "Sample Submission"
+      ]
+    },
+    {
+      "scheme_code": "ISI-MARK",
+      "step_number": 4,
+      "step_title": "Approval & Certificate Issuance",
+      "step_description": "On successful completion, ISI Mark certificate issued",
+      "duration_days": 5,
+      "required_documents": []
+    }
+  ],
+  "testing_laboratories": [
+    {
+      "lab_name": "Central Testing Laboratory, Delhi",
+      "accreditation_number": "BIS/LAB/001/2020",
+      "address": "Plot No. 45, Industrial Estate, Okhla Phase-I",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pincode": "110020",
+      "phone": "+91-11-XXXX-XXXX",
+      "email": "ctl.delhi@bis.org.in",
+      "website": "https://bis.org.in/labs/delhi",
+      "capabilities": [
+        "Cement Testing",
+        "Steel Testing",
+        "Aggregate Testing",
+        "Concrete Testing"
+      ],
+      "is_accredited": true,
+      "accreditation_date": "2020-01-15",
+      "latitude": 28.5495,
+      "longitude": 77.2559
+    },
+    {
+      "lab_name": "Regional Testing Centre, Mumbai",
+      "accreditation_number": "BIS/LAB/002/2020",
+      "address": "Industrial Development Estate, Wagle, Thane",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400604",
+      "phone": "+91-22-XXXX-XXXX",
+      "email": "rtc.mumbai@bis.org.in",
+      "website": "https://bis.org.in/labs/mumbai",
+      "capabilities": [
+        "Electrical Testing",
+        "LPG Cylinder Testing",
+        "Gas Equipment Testing"
+      ],
+      "is_accredited": true,
+      "accreditation_date": "2020-06-20",
+      "latitude": 19.2183,
+      "longitude": 72.8561
+    },
+    {
+      "lab_name": "Medical Equipment Testing Lab, Bengaluru",
+      "accreditation_number": "BIS/LAB/003/2021",
+      "address": "Technology Park, Electronic City, Bengaluru",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "pincode": "560100",
+      "phone": "+91-80-XXXX-XXXX",
+      "email": "metl.bangalore@bis.org.in",
+      "website": "https://bis.org.in/labs/bangalore",
+      "capabilities": [
+        "Medical Equipment Testing",
+        "Thermometer Calibration",
+        "X-ray Equipment Testing"
+      ],
+      "is_accredited": true,
+      "accreditation_date": "2021-03-10",
+      "latitude": 12.9716,
+      "longitude": 77.5946
+    }
+  ],
+  "hallmarking": [
+    {
+      "hallmark_code": "BIS-GOLD-916",
+      "metal_type": "Gold",
+      "purity_standard": "916",
+      "is_number": "IS 1417:2013",
+      "assay_procedure": "Touch needle assay, cupellation, and X-ray fluorescence",
+      "fineness_guaranteed": "91.6%",
+      "marking_requirements": "BIS hallmark + Jeweler's mark + Fineness mark + Date mark"
+    },
+    {
+      "hallmark_code": "BIS-GOLD-999",
+      "metal_type": "Gold",
+      "purity_standard": "999",
+      "is_number": "IS 1417:2013",
+      "assay_procedure": "Touch needle assay and X-ray fluorescence",
+      "fineness_guaranteed": "99.9%",
+      "marking_requirements": "BIS hallmark + Jeweler's mark + Fineness mark + Date mark"
+    },
+    {
+      "hallmark_code": "BIS-SILVER-925",
+      "metal_type": "Silver",
+      "purity_standard": "925",
+      "is_number": "IS 1418:2013",
+      "assay_procedure": "Cupellation method and X-ray fluorescence",
+      "fineness_guaranteed": "92.5%",
+      "marking_requirements": "BIS hallmark + Jeweler's mark + Fineness mark + Date mark"
+    }
+  ],
+  "consumer_faqs": [
+    {
+      "question": "What is the ISI Mark and why is it important?",
+      "answer": "The ISI Mark is a quality certification that indicates a product conforms to Indian Standards. It ensures the product meets safety, quality, and performance requirements. ISI Mark is mandatory for certain products like LPG cylinders, cement, and electrical equipment.",
+      "category": "Certification",
+      "is_number": "IS 1199:2018"
+    },
+    {
+      "question": "How long does ISI certification take?",
+      "answer": "ISI certification typically takes 45-60 days from application submission. This includes factory audit, sample testing, and approval process. The timeline may vary depending on product complexity and compliance status.",
+      "category": "Certification"
+    },
+    {
+      "question": "What is hallmarking and how does it protect consumers?",
+      "answer": "Hallmarking is a mark of purity guarantee on precious metals (gold, silver, platinum). The BIS hallmark ensures the metal meets the claimed purity standard. It protects consumers from fraud and malpractice by independent assay.",
+      "category": "Hallmarking"
+    },
+    {
+      "question": "Which testing labs are accredited for steel testing?",
+      "answer": "Multiple accredited laboratories conduct steel testing. The Central Testing Laboratory in Delhi and Regional Testing Centres in major cities are equipped for structural steel testing. Check the BIS website for the complete list of accredited labs in your area.",
+      "category": "Testing",
+      "is_number": "IS 226:2012"
+    },
+    {
+      "question": "How can I apply for ISI Mark certification?",
+      "answer": "Visit the BIS website, fill out the application form with manufacturing details, submit required documents (factory details, quality control plan, technical drawings), pay the application fee, and wait for the audit and testing process.",
+      "category": "Certification"
+    }
+  ],
+  "documents": [
+    {
+      "document_title": "ISI Mark Scheme - Applicants' Handbook",
+      "document_type": "GUIDELINE",
+      "related_scheme_code": "ISI-MARK",
+      "url": "https://www.bis.gov.in/documents/isi-mark-handbook",
+      "language": "en"
+    },
+    {
+      "document_title": "Testing Procedure for Cement - Quick Reference",
+      "document_type": "GUIDELINE",
+      "related_is_number": "IS 1199:2018",
+      "url": "https://www.bis.gov.in/documents/cement-testing-guide",
+      "language": "en"
+    },
+    {
+      "document_title": "Hallmarking Guidelines for Jewelers",
+      "document_type": "GUIDELINE",
+      "related_scheme_code": "HALLMARK",
+      "url": "https://www.bis.gov.in/documents/hallmark-guidelines",
+      "language": "en"
+    }
+  ]
+}
