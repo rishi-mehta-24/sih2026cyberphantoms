@@ -4,42 +4,28 @@ import MessageBubble from "./MessageBubble";
 import ResultCard from "./ResultCard";
 import LoadingSkeleton from "./LoadingSkeleton";
 
-// ---------------------------------------------------------------------------
-// REPLACE THIS with a real call to your backend/AI teammate's API once it
-// exists. It should send the user's question and return a reply plus any
-// matched standards. Keep the same shape ({ reply, results }) so the rest of
-// this component doesn't need to change.
-// ---------------------------------------------------------------------------
 async function fetchAssistantReply(question) {
-  await new Promise((resolve) => setTimeout(resolve, 900));
+  const response = await fetch("YOUR_BACKEND_URL_HERE/ask", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ question }),
+  });
 
-  // TEMPORARY: type a question containing "test error" to see the error
-  // state + retry button in action. Delete this block once your real
-  // backend call replaces this function.
-  if (question.toLowerCase().includes("test error")) {
-    throw new Error("Simulated failure for testing");
+  if (!response.ok) {
+    throw new Error("Failed to get a response from the assistant.");
   }
 
+  const data = await response.json();
+
   return {
-    reply:
-      "Based on your description, here are the standards and certification " +
-      "steps that likely apply. This is placeholder data — swap this function " +
-      "out for a real API call once the backend is ready.",
-    results: [
-      {
-        standard: "IS 302-1:2008",
-        title: "Safety of household and similar electrical appliances",
-        type: "Certification",
-      },
-      {
-        standard: "CRS Scheme",
-        title: "Compulsory Registration under BIS for electronics/IT goods",
-        type: "Licensing",
-      },
-    ],
+    reply: data.answer,
+    results: (data.sources || []).map((s) => ({
+      standard: s,
+      title: "",
+      type: "",
+    })),
   };
 }
-
 export default function ChatInterface({ t }) {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
